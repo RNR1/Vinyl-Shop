@@ -1,0 +1,22 @@
+.Header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #2c495b;
+  height: 90px;
+}
+
+.HeaderRow {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.SearchStack {
+  display: flex;
+}
+
+.Banner {
+  margin-left: 14px;
+}

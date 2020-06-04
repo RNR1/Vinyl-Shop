@@ -1,0 +1,37 @@
+.Container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-family: Arial, sans-serif;
+}
+
+.Categories {
+  color: #fff;
+  font-size: 16px;
+  text-decoration: none;
+  font-weight: 600;
+  padding: 8px 10px;
+  user-select: "none";
+}
+
+.Misc {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 10px;
+  user-select: none;
+}
+
+.Account {
+  color: #fff;
+  font-size: 14px;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+}

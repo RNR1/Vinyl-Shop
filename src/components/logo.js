@@ -5,7 +5,7 @@ import React from "react"
 
 export default function logo() {
   return (
-    <Link to="/">
+    <Link to="/" style={styles.Logo}>
       <StaticQuery
         query={query}
         render={data => (
@@ -17,6 +17,12 @@ export default function logo() {
       />
     </Link>
   )
+}
+
+const styles = {
+  Logo: {
+    userSelect: "none",
+  },
 }
 
 const query = graphql`

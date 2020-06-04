@@ -1,0 +1,51 @@
+.Dropdown {
+  height: 35px;
+  padding: 5px 13px;
+  font-size: 15px;
+  background-color: #e7e7e1;
+  cursor: pointer;
+  color: #000;
+  user-select: none;
+}
+
+.Dropdown:active {
+  margin-top: 2px;
+}
+
+.Current {
+  width: 100%;
+}
+
+.Caret {
+  position: relative;
+  top: -4;
+  margin-left: 4;
+}
+
+.List {
+  list-style: none;
+  list-style-position: inside;
+  background-color: white;
+  padding: 7px 0;
+  margin: 3px 0;
+  color: #000;
+  box-shadow: 0 0 1px black;
+  position: fixed;
+}
+
+.Item {
+  cursor: pointer;
+  display: block;
+  font-size: 15px;
+  width: 100%;
+  height: 100%;
+  padding: 2px 20px;
+}
+
+.Item:hover {
+  background-color: #efefef;
+}
+.Item:active {
+  color: white;
+  background-color: #4a95c1;
+}

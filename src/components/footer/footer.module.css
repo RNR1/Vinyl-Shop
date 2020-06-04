@@ -1,0 +1,43 @@
+.Footer {
+  background-color: #2c495b;
+  flex-grow: 0;
+}
+
+.ItemGroups {
+  display: flex;
+  flex-direction: row;
+  padding: 40px;
+  justify-content: space-evenly;
+}
+
+.ItemGroup {
+  text-decoration: none;
+  color: #fff;
+  font-size: 13px;
+}
+
+.ItemGroup:hover {
+  text-decoration: underline;
+}
+
+.SocialBar {
+  background-color: #1e3441;
+  display: flex;
+  height: 70px;
+  justify-content: space-evenly;
+  align-content: center;
+  align-items: center;
+  vertical-align: center;
+}
+
+.SocialIcon {
+  display: flex;
+  font-size: 16px;
+  margin: 20;
+}
+
+.FeedbackText {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+}

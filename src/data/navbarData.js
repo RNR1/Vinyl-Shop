@@ -6,9 +6,9 @@ import {
 } from "@fortawesome/free-solid-svg-icons"
 
 export const categories = [
-  { label: "Music", to: "/" },
-  { label: "DJ equipment", to: "/" },
-  { label: "Studio equipment", to: "/" },
+  { label: "Music", short: "Music", to: "/" },
+  { label: "DJ equipment", short: "DJ", to: "/" },
+  { label: "Studio equipment", short: "Studio", to: "/" },
 ]
 
 export const misc = [

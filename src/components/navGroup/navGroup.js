@@ -1,5 +1,7 @@
 import React from "react"
+
 import NavItem from "./navItem"
+import classes from "./navGroup.module.css"
 
 export default function NavGroup({
   items,
@@ -10,8 +12,8 @@ export default function NavGroup({
 }) {
   return (
     <>
-      <div style={styles.Container(direction)}>
-        {title && <h5 style={styles.Title}>{title}</h5>}
+      <div style={Container(direction)}>
+        {title && <h5 className={classes.Title}>{title}</h5>}
         {items.map(i => (
           <Item
             key={i.label}
@@ -27,14 +29,8 @@ export default function NavGroup({
   )
 }
 
-const styles = {
-  Container: direction => {
-    return { display: "flex", flexDirection: direction }
-  },
-  Title: {
-    color: "#fff",
-    fontFamily: "Arial, sans-serif",
-    fontWeight: 600,
-    fontSize: "1.05rem",
-  },
+const Container = direction => {
+  return { display: "flex", flexDirection: direction }
 }
+
+const styles = {}

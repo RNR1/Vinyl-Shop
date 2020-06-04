@@ -1,0 +1,31 @@
+.Container {
+  display: flex;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  flex-wrap: wrap;
+}
+
+.Input {
+  width: 400px;
+  height: 35px;
+  padding: 10px;
+  font-size: 15px;
+  user-select: none;
+  border-style: none;
+}
+
+.Button {
+  background-color: #4a95c1;
+  display: block;
+  width: 40px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Button:active {
+  margin-top: 2px;
+}

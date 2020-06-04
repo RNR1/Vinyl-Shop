@@ -9,8 +9,8 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-import Footer from "./footer"
+import Header from "./header/header"
+import Footer from "./footer/footer"
 import "./layout.css"
 
 export default function Layout({ children }) {
@@ -46,10 +46,14 @@ export default function Layout({ children }) {
 }
 
 const styles = {
-  Container: { display: "flex", minHeight: "100vh", flexDirection: "column" },
+  Container: {
+    display: "flex",
+    minHeight: "100vh",
+    flexDirection: "column",
+  },
   Main: {
     margin: `0 auto`,
-    maxWidth: 960,
+    maxWidth: 1320,
     padding: `0 1.0875rem 1.45rem`,
     flex: 1,
   },

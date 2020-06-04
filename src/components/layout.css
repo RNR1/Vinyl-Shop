@@ -218,7 +218,6 @@ img {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
 }
 h1 {
   margin-left: 0;
@@ -508,9 +507,6 @@ dt {
 th {
   font-weight: bold;
 }
-li {
-  margin-bottom: calc(1.45rem / 2);
-}
 ol li {
   padding-left: 0;
 }
@@ -614,6 +610,13 @@ pre code:after,
 pre tt:before,
 pre tt:after {
   content: "";
+}
+input,
+textarea,
+select,
+div,
+a {
+  outline: none;
 }
 @media only screen and (max-width: 480px) {
   html {
