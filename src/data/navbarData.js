@@ -20,5 +20,5 @@ export const misc = [
 export const account = [
   { icon: faUserAlt, label: "My Juno", to: "/", status: true },
   { icon: null, label: "Wishlist", to: "/" },
-  { icon: faShoppingCart, label: "Cart", to: "/" },
+  { icon: faShoppingCart, iconColor: "#E89108", label: "Cart", to: "/" },
 ]

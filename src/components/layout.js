@@ -30,7 +30,6 @@ export default function Layout({ children }) {
       }
     }
   `)
-
   return (
     <div style={styles.Container}>
       <Header

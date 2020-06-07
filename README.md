@@ -17,12 +17,12 @@ I decided to challenge myself to reverse engineer their website with gatsby(reac
 
 ### Header
 
-<img src="assets/header.png">
+<img src="assets/header.png" alt="Header">
 
 ### Search + Dropdown
 
-<img src="assets/searchbar.png">
+<img src="assets/dropdown.gif" alt="Dropdown menu">
 
 ### Footer
 
-<img src="assets/footer.png">
+<img src="assets/footer.png" alt="Footer">

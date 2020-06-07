@@ -1,8 +1,9 @@
 import React from "react"
+import classes from "./secureIcon.module.css"
 
 export default function SecureIcon() {
   return (
-    <svg id="icon-secure" viewBox="0 0 32 32">
+    <svg className={classes.SecureIcon} viewBox="0 0 32 32">
       <line x1="7" y1="13.6" x2="18" y2="13.6" fill="none"></line>
       <path
         d="M7 7c0-1.2 1-2.4 2.4-2.4h6.3c1.2 0 2.4 1 2.4 2.4v6.9h4.5V7c0-3.8-3.1-7-6.9-7H9.3C5.4 0 2.4 3.2 2.4 7v6.9H7V7z"

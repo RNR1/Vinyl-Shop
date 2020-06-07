@@ -7,6 +7,7 @@ import colors from "../../config/colors"
 
 export default function NavItem({
   icon,
+  color,
   label,
   chevron,
   status,
@@ -14,7 +15,9 @@ export default function NavItem({
 }) {
   return (
     <Link {...linkProps}>
-      {icon && <FontAwesomeIcon icon={icon} style={{ marginRight: 5 }} />}
+      {icon && (
+        <FontAwesomeIcon icon={icon} color={color} style={{ marginRight: 5 }} />
+      )}
       {label} {chevron && <FontAwesomeIcon icon={faCaretDown} />}
       {status && <StatusIndicator color={colors.green} />}
     </Link>
