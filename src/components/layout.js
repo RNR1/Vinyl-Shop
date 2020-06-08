@@ -12,6 +12,7 @@ import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header/header"
 import Footer from "./footer/footer"
 import "./layout.css"
+import "flag-icon-css/css/flag-icon.css"
 
 export default function Layout({ children }) {
   const data = useStaticQuery(graphql`

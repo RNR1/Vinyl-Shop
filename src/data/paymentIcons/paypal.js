@@ -10,6 +10,7 @@ export default function Paypal(props) {
       height={80}
       {...props}
     >
+      <title>PayPal</title>
       <defs>
         <style>
           {".cls-1,.cls-2{fill:#009ee3;fill-rule:evenodd}.cls-2{fill:#113984}"}

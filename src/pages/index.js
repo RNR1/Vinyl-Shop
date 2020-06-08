@@ -5,7 +5,7 @@ import SEO from "../components/seo"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" />
+    <SEO title="Vinyl, DJ equipment and studio equipment. Low prices and super fast delivery." />
   </Layout>
 )
 

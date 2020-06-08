@@ -1,14 +1,16 @@
 .Container {
   display: flex;
-  -webkit-flex-grow: 1;
   flex-grow: 1;
+  width: 537px;
+  justify-content: flex-end;
   align-items: center;
   font-family: Arial, sans-serif;
-  flex-wrap: wrap;
 }
 
 .Input {
-  width: 400px;
+  flex-grow: 1;
+  min-width: 300px;
+  width: auto;
   height: 35px;
   padding: 10px;
   font-size: 15px;
@@ -17,6 +19,7 @@
 }
 
 .Button {
+  flex-shrink: 0;
   background-color: #4a95c1;
   display: block;
   width: 40px;

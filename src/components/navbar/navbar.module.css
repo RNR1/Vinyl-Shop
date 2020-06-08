@@ -15,23 +15,32 @@
   user-select: "none";
 }
 
-.Misc {
-  color: #fff;
-  font-size: 14px;
+.Categories:hover {
+  background-color: #fff;
+  color: #000;
+  transition: all 0.2s ease;
+}
+
+.Misc,
+.Account {
+  color: #efefef;
+  font-size: 13px;
+  justify-self: flex-end;
   text-decoration: none;
-  font-weight: 500;
+  font-weight: 600;
   padding: 8px 10px;
   user-select: none;
 }
 
+.Misc:hover,
+.Account:hover {
+  background-color: #16252e;
+  z-index: 0;
+  transition: background-color 0.2s ease;
+}
+
 .Account {
-  color: #fff;
-  font-size: 14px;
-  text-decoration: none;
-  font-weight: 500;
-  padding: 8px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  user-select: none;
 }

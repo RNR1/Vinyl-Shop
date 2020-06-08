@@ -11,6 +11,8 @@ import Mastercard from "../../data/paymentIcons/mastercard"
 import Maestro from "../../data/paymentIcons/maestro"
 import Paypal from "../../data/paymentIcons/paypal"
 import classes from "./footer.module.css"
+import { Link, StaticQuery } from "gatsby"
+import Img from "gatsby-image"
 
 export default function Footer() {
   return (
@@ -55,7 +57,15 @@ export default function Footer() {
             <p className={classes.SmallStatement}>
               Best Music Store: 5 time winners
             </p>
-            <div>AFEM LOGO</div>
+            <StaticQuery
+              query={query}
+              render={data => (
+                <Img
+                  fixed={data.afem.childImageSharp.fixed}
+                  alt="Association for Electronic Music"
+                />
+              )}
+            />
             <p className={classes.SmallStatement}>© 1996 - 2020 Juno Records</p>
             <p className={classes.License}>
               All image and audio content is used by permission of the copyright
@@ -79,9 +89,29 @@ export default function Footer() {
             style={{ marginRight: 5 }}
           />
           We'd like to know what you think of Juno's website. Please send us
-          your comments and suggestions via our feedback page.
+          your comments and suggestions via our{" "}
+          <Link to="/" className={classes.FeedbackText}>
+            feedback page.
+          </Link>
         </span>
       </div>
     </footer>
   )
 }
+
+const query = graphql`
+  query afemLogo {
+    site {
+      siteMetadata {
+        title
+      }
+    }
+    afem: file(relativePath: { eq: "afem.png" }) {
+      childImageSharp {
+        fixed(height: 40) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`

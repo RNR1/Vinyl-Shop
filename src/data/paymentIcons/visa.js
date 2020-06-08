@@ -11,6 +11,7 @@ export default function Visa(props) {
       xmlSpace="preserve"
       {...props}
     >
+      <title>Visa</title>
       <g transform="matrix(4.42996 0 0 4.42996 -81.166 -105.048)">
         <path
           fill="#00579f"

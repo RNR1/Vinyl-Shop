@@ -12,7 +12,7 @@ export const categories = [
 ]
 
 export const misc = [
-  { icon: null, label: "USD", to: "/" },
+  { icon: null, iso: "gb", label: "USD", to: "/" },
   { icon: faGift, label: "Gift Vouchers", to: "/" },
   { icon: faQuestionCircle, label: "Help", to: "/" },
 ]

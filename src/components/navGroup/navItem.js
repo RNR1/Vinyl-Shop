@@ -4,9 +4,11 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCaretDown } from "@fortawesome/free-solid-svg-icons"
 import StatusIndicator from "../statusIndicator"
 import colors from "../../config/colors"
+import FlagIcon from "../flagIcon"
 
 export default function NavItem({
   icon,
+  iso,
   color,
   label,
   chevron,
@@ -15,6 +17,7 @@ export default function NavItem({
 }) {
   return (
     <Link {...linkProps}>
+      {iso && <FlagIcon iso={iso} />}
       {icon && (
         <FontAwesomeIcon icon={icon} color={color} style={{ marginRight: 5 }} />
       )}

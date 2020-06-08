@@ -3,6 +3,7 @@ import * as React from "react"
 export default function Mastercard(props) {
   return (
     <svg width={45} height={45} viewBox="0 0 600.46 900.3622047" {...props}>
+      <title>MasterCard</title>
       <g fillOpacity={1} stroke="none" strokeLinejoin="miter">
         <circle
           cx={229.59059}

@@ -302,7 +302,7 @@ h5 {
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.85028rem;
-  line-height: 1.1;
+  line-height: 1.5;
 }
 h6 {
   margin-left: 0;
@@ -383,7 +383,6 @@ p {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
 }
 figure {
   margin-left: 0;

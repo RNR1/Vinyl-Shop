@@ -10,6 +10,7 @@ export default function Maestro(props) {
       viewBox="0 0 156.78 110.64"
       {...props}
     >
+      <title>Maestro</title>
       <defs>
         <style>{".cls-4{fill:#00a1df}"}</style>
       </defs>

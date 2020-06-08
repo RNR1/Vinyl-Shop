@@ -17,6 +17,7 @@ export default function NavGroup({
         <Item
           key={i.label}
           icon={i.icon}
+          iso={i.iso}
           color={i.iconColor}
           to={i.to}
           label={i.label}
