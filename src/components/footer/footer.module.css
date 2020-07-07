@@ -47,17 +47,6 @@
   font-style: italic;
 }
 
-.PaymentMethods {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 220px;
-  height: 30px;
-  background-color: #e5ecf1;
-  border-radius: 2px;
-  margin-bottom: 20px;
-}
-
 .SocialBar {
   background-color: #1e3441;
   display: flex;

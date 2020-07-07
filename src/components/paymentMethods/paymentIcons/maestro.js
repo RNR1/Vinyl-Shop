@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from 'react'
 
 export default function Maestro(props) {
   return (
@@ -12,7 +12,7 @@ export default function Maestro(props) {
     >
       <title>Maestro</title>
       <defs>
-        <style>{".cls-4{fill:#00a1df}"}</style>
+        <style>{'.cls-4{fill:#00a1df}'}</style>
       </defs>
       <path fill="none" d="M0 0H146.78V120.64H0z" />
       <path

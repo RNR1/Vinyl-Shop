@@ -1,8 +1,8 @@
-import React from "react"
+import React from 'react'
 
-import NavGroup from "../navGroup/navGroup"
-import { categories, misc, account } from "../../data/navbarData"
-import classes from "./navbar.module.css"
+import NavGroup from '../navGroup/navGroup'
+import { categories, misc, account } from '../../data/navbarData'
+import classes from './navbar.module.css'
 
 export default function Navbar() {
   return (

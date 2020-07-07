@@ -1,25 +1,19 @@
-import React, { useState } from "react"
-import { faSearch } from "@fortawesome/free-solid-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import Dropdown from "../dropdown/dropdown"
-import classes from "./searchbar.module.css"
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 
-const searchTypes = [
-  { id: "all", value: "all", label: "All" },
-  { id: "artists", value: "artists", label: "Artists" },
-  { id: "releaseTitles", value: "releaseTitles", label: "Release Titles" },
-  { id: "labels", value: "labels", label: "Labels" },
-  { id: "equipment", value: "equipment", label: "Equipment" },
-]
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Dropdown from '../dropdown/dropdown.js'
+import classes from './searchbar.module.css'
 
-export default function SearchBar() {
-  const [searchValue, setSearchValue] = useState("")
+export default function SearchBar({ siteTitle = '', searchFilters = [] }) {
+  const [searchValue, setSearchValue] = useState('')
   return (
     <div className={classes.Container}>
-      <Dropdown items={searchTypes} />
+      <Dropdown items={searchFilters} />
       <input
         type="text"
-        placeholder="Search Vinyl-shop..."
+        placeholder={`Search ${siteTitle}...`}
         aria-label="search"
         value={searchValue}
         onChange={({ target }) => setSearchValue(target.value)}
@@ -33,5 +27,16 @@ export default function SearchBar() {
 }
 
 const styles = {
-  SearchIcon: { fontSize: 12, color: "#fff" },
+  SearchIcon: { fontSize: 12, color: '#fff' },
+}
+
+SearchBar.propTypes = {
+  siteTitle: PropTypes.string,
+  searchFilters: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      value: PropTypes.string,
+      label: PropTypes.string,
+    })
+  ),
 }

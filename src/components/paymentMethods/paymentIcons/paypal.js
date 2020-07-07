@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from 'react'
 
 export default function Paypal(props) {
   return (
@@ -13,7 +13,7 @@ export default function Paypal(props) {
       <title>PayPal</title>
       <defs>
         <style>
-          {".cls-1,.cls-2{fill:#009ee3;fill-rule:evenodd}.cls-2{fill:#113984}"}
+          {'.cls-1,.cls-2{fill:#009ee3;fill-rule:evenodd}.cls-2{fill:#113984}'}
         </style>
       </defs>
       <path

@@ -1,7 +1,7 @@
-import { Link, graphql, StaticQuery } from "gatsby"
-import Img from "gatsby-image"
+import { Link, graphql, StaticQuery } from 'gatsby'
+import Img from 'gatsby-image'
 
-import React from "react"
+import React from 'react'
 
 export default function logo() {
   return (
@@ -21,9 +21,9 @@ export default function logo() {
 
 const styles = {
   Logo: {
-    userSelect: "none",
-    display: "flex",
-    justifyItems: "flex-end",
+    userSelect: 'none',
+    display: 'flex',
+    justifyItems: 'flex-end',
   },
 }
 

@@ -1,12 +1,13 @@
-import React, { useState } from "react"
-import onClickOutside from "react-onclickoutside"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons"
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import onClickOutside from 'react-onclickoutside'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
-import classes from "./dropdown.module.css"
-import DropdownItem from "./dropdownItem"
+import classes from './dropdown.module.css'
+import DropdownItem from './dropdownItem'
 
-function Dropdown({ label = "Select", items = [], multiSelect = false }) {
+function Dropdown({ label = 'Select', items = [], multiSelect = false }) {
   const [open, setOpen] = useState(false)
   const [selection, setSelection] = useState([])
   const toggle = () => setOpen(!open)
@@ -27,9 +28,9 @@ function Dropdown({ label = "Select", items = [], multiSelect = false }) {
   }
 
   const currentSelection = () => {
-    if (selection.length) return selection[0].label
     if (multiSelect) return label
-    return items[0]?.label || label
+    if (selection.length) return selection[0].label
+    return (items[0] && items[0].label) || label
   }
 
   return (
@@ -62,9 +63,21 @@ function Dropdown({ label = "Select", items = [], multiSelect = false }) {
 }
 
 const caretStyle = {
-  position: "relative",
+  position: 'relative',
   top: -4,
   marginLeft: 4,
+}
+
+Dropdown.propTypes = {
+  label: PropTypes.string,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      value: PropTypes.string,
+      label: PropTypes.string,
+    })
+  ).isRequired,
+  multiSelect: PropTypes.bool,
 }
 
 const clickOutsideConfig = {

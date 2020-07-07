@@ -1,11 +1,12 @@
-import PropTypes from "prop-types"
-import React from "react"
-import Img from "gatsby-image"
+import PropTypes from 'prop-types'
+import React from 'react'
+import Img from 'gatsby-image'
 
-import Navbar from "../navbar/navbar"
-import Logo from "../logo"
-import SearchBar from "../searchbar/searchbar"
-import classes from "./header.module.css"
+import Navbar from '../navbar/navbar'
+import Logo from '../logo'
+import SearchBar from '../searchbar/searchbar'
+import classes from './header.module.css'
+import { searchTypes } from '../../data/searchTypes'
 
 export default function Header({ siteTitle, banner }) {
   return (
@@ -13,7 +14,7 @@ export default function Header({ siteTitle, banner }) {
       <div className={classes.HeaderRow}>
         <Logo />
         <div className={classes.SearchStack}>
-          <SearchBar />
+          <SearchBar siteTitle={siteTitle} searchFilters={searchTypes} />
           <Img fixed={banner} alt={siteTitle} className={classes.Banner} />
         </div>
       </div>
@@ -26,8 +27,9 @@ export default function Header({ siteTitle, banner }) {
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
+  banner: PropTypes.object,
 }
 
 Header.defaultProps = {
-  siteTitle: `Vinyl-Shop`,
+  siteTitle: 'Vinyl-Shop',
 }

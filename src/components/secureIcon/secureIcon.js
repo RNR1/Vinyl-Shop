@@ -1,5 +1,5 @@
-import React from "react"
-import classes from "./secureIcon.module.css"
+import React from 'react'
+import classes from './secureIcon.module.css'
 
 export default function SecureIcon() {
   return (

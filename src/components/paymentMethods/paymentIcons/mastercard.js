@@ -1,4 +1,4 @@
-import * as React from "react"
+import * as React from 'react'
 
 export default function Mastercard(props) {
   return (
@@ -35,9 +35,9 @@ export default function Mastercard(props) {
         />
         <g
           style={{
-            lineHeight: "125%",
-            InkscapeFontSpecification: "Sans",
-            textAlign: "center",
+            lineHeight: '125%',
+            InkscapeFontSpecification: 'Sans',
+            textAlign: 'center',
           }}
           fontStyle="normal"
           fontWeight={700}

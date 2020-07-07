@@ -1,10 +1,11 @@
-import React from "react"
-import { Link } from "gatsby"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faCaretDown } from "@fortawesome/free-solid-svg-icons"
-import StatusIndicator from "../statusIndicator"
-import colors from "../../config/colors"
-import FlagIcon from "../flagIcon"
+import React from 'react'
+import PropTypes from 'prop-types'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
+
+import StatusIndicator from '@bit/ronbraha.codebyron.status-indicator'
+import FlagIcon from '@bit/ronbraha.codebyron.flag-icon.flag-icon'
 
 export default function NavItem({
   icon,
@@ -16,13 +17,22 @@ export default function NavItem({
   ...linkProps
 }) {
   return (
-    <Link {...linkProps}>
+    <a {...linkProps}>
       {iso && <FlagIcon iso={iso} />}
       {icon && (
         <FontAwesomeIcon icon={icon} color={color} style={{ marginRight: 5 }} />
       )}
       {label} {chevron && <FontAwesomeIcon icon={faCaretDown} />}
-      {status && <StatusIndicator color={colors.green} />}
-    </Link>
+      {status && <StatusIndicator status={status} />}
+    </a>
   )
+}
+
+NavItem.propTypes = {
+  icon: PropTypes.object,
+  iso: PropTypes.string,
+  color: PropTypes.string,
+  label: PropTypes.string,
+  chevron: PropTypes.bool,
+  status: PropTypes.string,
 }
