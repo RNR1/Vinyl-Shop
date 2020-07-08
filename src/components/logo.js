@@ -22,8 +22,6 @@ export default function logo() {
 const styles = {
   Logo: {
     userSelect: 'none',
-    display: 'flex',
-    justifyItems: 'flex-end',
   },
 }
 
