@@ -13,7 +13,7 @@ var _reactFontawesome = require("@fortawesome/react-fontawesome");
 
 var _freeSolidSvgIcons = require("@fortawesome/free-solid-svg-icons");
 
-var _ronbrahaCodebyron = _interopRequireDefault(require("@bit/ronbraha.codebyron.status-indicator"));
+var _statusIndicator = _interopRequireDefault(require("../statusIndicator/statusIndicator"));
 
 var _ronbrahaCodebyronFlagIcon = _interopRequireDefault(require("@bit/ronbraha.codebyron.flag-icon.flag-icon"));
 
@@ -42,7 +42,7 @@ function NavItem(_ref) {
     }
   }), label, " ", chevron && /*#__PURE__*/_react["default"].createElement(_reactFontawesome.FontAwesomeIcon, {
     icon: _freeSolidSvgIcons.faCaretDown
-  }), status && /*#__PURE__*/_react["default"].createElement(_ronbrahaCodebyron["default"], {
+  }), status && /*#__PURE__*/_react["default"].createElement(_statusIndicator["default"], {
     status: status
   }));
 }

@@ -8,6 +8,16 @@ import NavGroup from '@bit/ronbraha.codebyron.nav-group'
 import Icon from './icon'
 import { socialLinks } from './socialLinks'
 
+/** @flow */
+/**
+ * Navigation bar with social links and contact caption.
+ * @name SocialBar
+ * @param {string} siteTitle
+ * @param {[]} socialItems
+ * @param {string} feedbackUrl
+ * @example
+ *  <SocialBar siteTitle="Ron" socialItems={[{ icon: faFacebookF, label: "Facebook", to: "/" }]} feedbackUrl="https://github.com/RNR1" />
+ */
 export default function SocialBar({
   siteTitle,
   socialItems = socialLinks,
@@ -28,7 +38,7 @@ export default function SocialBar({
           style={{ marginRight: 5 }}
         />
         We&apos;d like to know what you think of{' '}
-        {siteTitle ? `${siteTitle}'s` : 'our'} website. Please send us your
+        {siteTitle ? `${siteTitle}'s` : 'the'} website. Please send us your
         comments and suggestions via our{' '}
         <a href={feedbackUrl} className={classes.FeedbackText}>
           feedback page.

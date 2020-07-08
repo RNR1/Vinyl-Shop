@@ -37,11 +37,27 @@ function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
+/** @flow */
+
+/**
+ * Search bar with a build-in filters dropdown.
+ * @name Searchbar
+ * @param {string} siteTitle
+ * @param {[]} searchFilters
+ * @param {bool} multiSelect
+ * @param {string} filtersLabel
+ * @example
+ *  <Searchbar siteTitle="My App" searchFilters={[{ id: 'all', value: 'all', label: 'All' }]} />
+ */
 function SearchBar(_ref) {
   var _ref$siteTitle = _ref.siteTitle,
       siteTitle = _ref$siteTitle === void 0 ? '' : _ref$siteTitle,
       _ref$searchFilters = _ref.searchFilters,
-      searchFilters = _ref$searchFilters === void 0 ? [] : _ref$searchFilters;
+      searchFilters = _ref$searchFilters === void 0 ? [] : _ref$searchFilters,
+      _ref$multiSelect = _ref.multiSelect,
+      multiSelect = _ref$multiSelect === void 0 ? false : _ref$multiSelect,
+      _ref$filtersLabel = _ref.filtersLabel,
+      filtersLabel = _ref$filtersLabel === void 0 ? 'Filters' : _ref$filtersLabel;
 
   var _useState = (0, _react.useState)(''),
       _useState2 = _slicedToArray(_useState, 2),
@@ -51,15 +67,17 @@ function SearchBar(_ref) {
   return /*#__PURE__*/_react["default"].createElement("div", {
     className: _searchbarModule["default"].Container
   }, /*#__PURE__*/_react["default"].createElement(_dropdown["default"], {
-    items: searchFilters
+    label: filtersLabel,
+    items: searchFilters,
+    multiSelect: multiSelect
   }), /*#__PURE__*/_react["default"].createElement("input", {
     type: "text",
     placeholder: "Search ".concat(siteTitle, "..."),
     "aria-label": "search",
     value: searchValue,
     onChange: function onChange(_ref2) {
-      var target = _ref2.target;
-      return setSearchValue(target.value);
+      var value = _ref2.target.value;
+      return setSearchValue(value);
     },
     className: _searchbarModule["default"].Input
   }), /*#__PURE__*/_react["default"].createElement("div", {
@@ -82,7 +100,9 @@ SearchBar.propTypes = {
     id: _propTypes["default"].string,
     value: _propTypes["default"].string,
     label: _propTypes["default"].string
-  }))
+  })),
+  multiSelect: _propTypes["default"].bool,
+  filtersLabel: _propTypes["default"].string
 };
 
 //# sourceMappingURL=searchbar.js.map

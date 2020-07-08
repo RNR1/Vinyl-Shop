@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
-import StatusIndicator from '@bit/ronbraha.codebyron.status-indicator'
+import StatusIndicator from '../statusIndicator/statusIndicator'
 import FlagIcon from '@bit/ronbraha.codebyron.flag-icon.flag-icon'
 
 export default function NavItem({

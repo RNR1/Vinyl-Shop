@@ -2,6 +2,7 @@
   display: flex;
   flex-grow: 1;
   width: 537px;
+  max-width: 537px;
   justify-content: flex-end;
   align-items: center;
   font-family: Arial, sans-serif;
@@ -10,9 +11,10 @@
 .Input {
   flex-grow: 1;
   min-width: 300px;
+  background-color: white;
   width: auto;
   height: 35px;
-  padding: 10px;
+  padding: 0 10px;
   font-size: 15px;
   user-select: none;
   border-style: none;
@@ -21,7 +23,6 @@
 .Button {
   flex-shrink: 0;
   background-color: #4a95c1;
-  display: block;
   width: 40px;
   height: 35px;
   display: flex;

@@ -1,17 +1,25 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+/** @flow */
+/**
+ * A simple circle used for indicating user/account status.
+ * @name StatusIndicator
+ * @param {string} status
+ * @example
+ *  <StatusIndicator status="online" />
+ */
 export default function StatusIndicator({ status }) {
-  let color
+  let backgroundColor
   switch (status) {
     case 'online':
-      color = '#91D01F'
+      backgroundColor = '#91D01F'
       break
     case 'n/a':
-      color = '#e89108'
+      backgroundColor = '#e89108'
       break
     case 'offline':
-      color = '#e74c3c'
+      backgroundColor = '#e74c3c'
       break
   }
   return (
@@ -22,7 +30,7 @@ export default function StatusIndicator({ status }) {
           width: 10,
           borderRadius: 5,
           marginLeft: 5,
-          backgroundColor: color,
+          backgroundColor,
         }}
       />
     </span>
@@ -30,5 +38,5 @@ export default function StatusIndicator({ status }) {
 }
 
 StatusIndicator.propTypes = {
-  status: PropTypes.string.isRequired,
+  status: PropTypes.oneOf(['online', 'n/a', 'offline']),
 }

@@ -23,6 +23,17 @@ var _socialLinks = require("./socialLinks");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
+/** @flow */
+
+/**
+ * Navigation bar with social links and contact caption.
+ * @name SocialBar
+ * @param {string} siteTitle
+ * @param {[]} socialItems
+ * @param {string} feedbackUrl
+ * @example
+ *  <SocialBar siteTitle="Ron" socialItems={[{ icon: faFacebookF, label: "Facebook", to: "/" }]} feedbackUrl="https://github.com/RNR1" />
+ */
 function SocialBar(_ref) {
   var siteTitle = _ref.siteTitle,
       _ref$socialItems = _ref.socialItems,
@@ -46,7 +57,7 @@ function SocialBar(_ref) {
     style: {
       marginRight: 5
     }
-  }), "We'd like to know what you think of", ' ', siteTitle ? "".concat(siteTitle, "'s") : 'our', " website. Please send us your comments and suggestions via our", ' ', /*#__PURE__*/_react["default"].createElement("a", {
+  }), "We'd like to know what you think of", ' ', siteTitle ? "".concat(siteTitle, "'s") : 'the', " website. Please send us your comments and suggestions via our", ' ', /*#__PURE__*/_react["default"].createElement("a", {
     href: feedbackUrl,
     className: _socialBarModule["default"].FeedbackText
   }, "feedback page.")));
