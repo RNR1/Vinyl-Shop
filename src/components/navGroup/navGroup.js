@@ -12,6 +12,7 @@ import classes from './navGroup.module.css'
  * @param {[]} items
  * @param {ReactElement} Item
  * @param {string} direction
+ * @param {bool} responsiveItems
  * @example
  *  <NavGroup items={[{ label: "Music", short: "Music", to: "/" }]} chevron className={classes.Categories} />
  */
@@ -20,6 +21,7 @@ export default function NavGroup({
   items,
   Item = NavItem,
   direction = 'row',
+  responsiveItems,
   ...props
 }) {
   return (
@@ -35,6 +37,7 @@ export default function NavGroup({
             to={i.to}
             label={i.label}
             status={i.status}
+            responsive={Item === NavItem ? responsiveItems : null}
             {...props}
           />
         ))}
@@ -47,6 +50,7 @@ NavGroup.propTypes = {
   items: PropTypes.array.isRequired,
   Item: PropTypes.func,
   direction: PropTypes.oneOf(['row', 'column']),
+  responsiveItems: PropTypes.bool,
 }
 
 const Container = direction => {

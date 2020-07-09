@@ -36,7 +36,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "ronbraha.codebyron/nav-group@1.0.24": {
+    "ronbraha.codebyron/nav-group@1.0.25": {
         "files": [
             {
                 "name": "navGroup.js",
@@ -59,7 +59,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "ronbraha.codebyron/searchbar@1.0.18": {
+    "ronbraha.codebyron/searchbar@1.0.19": {
         "files": [
             {
                 "name": "searchbar.js",
@@ -77,7 +77,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "ronbraha.codebyron/social-bar@1.0.27": {
+    "ronbraha.codebyron/social-bar@1.0.28": {
         "files": [
             {
                 "name": "icon.js",
@@ -114,6 +114,18 @@
             }
         ],
         "mainFile": "src/components/statusIndicator/statusIndicator.js",
+        "origin": "AUTHORED",
+        "exported": true
+    },
+    "ronbraha.codebyron/use-current-width@0.0.1": {
+        "files": [
+            {
+                "relativePath": "src/utils/useCurrentWidth.js",
+                "test": false,
+                "name": "useCurrentWidth.js"
+            }
+        ],
+        "mainFile": "src/utils/useCurrentWidth.js",
         "origin": "AUTHORED",
         "exported": true
     },

@@ -6,6 +6,7 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 import StatusIndicator from '../statusIndicator/statusIndicator'
 import FlagIcon from '@bit/ronbraha.codebyron.flag-icon.flag-icon'
+import useCurrentWidth from '../../utils/useCurrentWidth'
 
 export default function NavItem({
   icon,
@@ -14,15 +15,26 @@ export default function NavItem({
   label,
   chevron,
   status,
+  responsive,
   ...linkProps
 }) {
+  let width = useCurrentWidth()
+  const largeScreenMode = width >= 1024 || !responsive
   return (
     <a {...linkProps}>
       {iso && <FlagIcon iso={iso} />}
       {icon && (
-        <FontAwesomeIcon icon={icon} color={color} style={{ marginRight: 5 }} />
+        <FontAwesomeIcon
+          icon={icon}
+          color={color}
+          size={largeScreenMode ? 'sm' : 'lg'}
+          style={{ marginRight: 5 }}
+        />
       )}
-      {label} {chevron && <FontAwesomeIcon icon={faCaretDown} />}
+      <span>
+        {largeScreenMode && label}{' '}
+        {chevron && <FontAwesomeIcon icon={faCaretDown} />}
+      </span>
       {status && <StatusIndicator status={status} />}
     </a>
   )
@@ -35,4 +47,5 @@ NavItem.propTypes = {
   label: PropTypes.string,
   chevron: PropTypes.bool,
   status: PropTypes.string,
+  responsive: PropTypes.bool,
 }

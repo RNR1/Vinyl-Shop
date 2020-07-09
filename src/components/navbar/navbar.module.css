@@ -1,6 +1,6 @@
 .Container {
-  width: 100%;
   display: flex;
+  width: 100%;
   flex-direction: row;
   justify-content: space-evenly;
   font-family: Arial, sans-serif;
@@ -12,7 +12,7 @@
   text-decoration: none;
   font-weight: 600;
   padding: 8px 10px;
-  user-select: "none";
+  user-select: 'none';
 }
 
 .Categories:hover {
@@ -24,7 +24,7 @@
 .Misc,
 .Account {
   color: #efefef;
-  font-size: 13px;
+  font-size: 0.8rem;
   justify-self: flex-end;
   text-decoration: none;
   font-weight: 600;
@@ -43,4 +43,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (max-width: 1023px) {
+  .Container {
+    display: flex;
+    width: initial;
+  }
+  .Categories,
+  .Misc {
+    display: none;
+  }
 }

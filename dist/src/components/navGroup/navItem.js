@@ -17,6 +17,8 @@ var _statusIndicator = _interopRequireDefault(require("../statusIndicator/status
 
 var _ronbrahaCodebyronFlagIcon = _interopRequireDefault(require("@bit/ronbraha.codebyron.flag-icon.flag-icon"));
 
+var _useCurrentWidth = _interopRequireDefault(require("../../utils/useCurrentWidth"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
@@ -30,19 +32,23 @@ function NavItem(_ref) {
       label = _ref.label,
       chevron = _ref.chevron,
       status = _ref.status,
-      linkProps = _objectWithoutProperties(_ref, ["icon", "iso", "color", "label", "chevron", "status"]);
+      responsive = _ref.responsive,
+      linkProps = _objectWithoutProperties(_ref, ["icon", "iso", "color", "label", "chevron", "status", "responsive"]);
 
+  var width = (0, _useCurrentWidth["default"])();
+  var largeScreenMode = width >= 1024 || !responsive;
   return /*#__PURE__*/_react["default"].createElement("a", linkProps, iso && /*#__PURE__*/_react["default"].createElement(_ronbrahaCodebyronFlagIcon["default"], {
     iso: iso
   }), icon && /*#__PURE__*/_react["default"].createElement(_reactFontawesome.FontAwesomeIcon, {
     icon: icon,
     color: color,
+    size: largeScreenMode ? 'sm' : 'lg',
     style: {
       marginRight: 5
     }
-  }), label, " ", chevron && /*#__PURE__*/_react["default"].createElement(_reactFontawesome.FontAwesomeIcon, {
+  }), /*#__PURE__*/_react["default"].createElement("span", null, largeScreenMode && label, ' ', chevron && /*#__PURE__*/_react["default"].createElement(_reactFontawesome.FontAwesomeIcon, {
     icon: _freeSolidSvgIcons.faCaretDown
-  }), status && /*#__PURE__*/_react["default"].createElement(_statusIndicator["default"], {
+  })), status && /*#__PURE__*/_react["default"].createElement(_statusIndicator["default"], {
     status: status
   }));
 }
@@ -53,7 +59,8 @@ NavItem.propTypes = {
   color: _propTypes["default"].string,
   label: _propTypes["default"].string,
   chevron: _propTypes["default"].bool,
-  status: _propTypes["default"].string
+  status: _propTypes["default"].string,
+  responsive: _propTypes["default"].bool
 };
 
 //# sourceMappingURL=navItem.js.map

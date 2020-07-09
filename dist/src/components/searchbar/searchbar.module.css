@@ -1,23 +1,47 @@
 .Container {
   display: flex;
-  flex-grow: 1;
-  width: 537px;
   max-width: 537px;
+  flex-basis: auto;
   justify-content: flex-end;
   align-items: center;
   font-family: Arial, sans-serif;
 }
 
 .Input {
-  flex-grow: 1;
-  min-width: 300px;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  width: 150px;
   background-color: white;
-  width: auto;
   height: 35px;
   padding: 0 10px;
   font-size: 15px;
   user-select: none;
   border-style: none;
+}
+
+@media (min-width: 1024px) {
+  .Container,
+  .Input {
+    flex-grow: 1;
+  }
+  .Input {
+    max-width: 150px;
+    width: auto;
+  }
+}
+
+@media (min-width: 1150px) {
+  .Container,
+  .Input {
+    flex-grow: 1;
+  }
+
+  .Input {
+    max-width: none;
+    min-width: 300px;
+    width: auto;
+  }
 }
 
 .Button {

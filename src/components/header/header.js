@@ -7,20 +7,29 @@ import Logo from '../logo'
 import SearchBar from '../searchbar/searchbar'
 import classes from './header.module.css'
 import { searchTypes } from '../../data/searchTypes'
+import useCurrentWidth from '../../utils/useCurrentWidth'
 
 export default function Header({ siteTitle, banner }) {
+  const width = useCurrentWidth()
   return (
     <header className={classes.Header}>
       <div className={classes.HeaderRow}>
-        <Logo />
+        <div className={classes.Logo}>
+          <Logo />
+        </div>
         <div className={classes.SearchStack}>
           <SearchBar siteTitle={siteTitle} searchFilters={searchTypes} />
-          <Img fixed={banner} alt={siteTitle} className={classes.Banner} />
+          <div className={classes.Banner}>
+            <Img fixed={banner} alt={siteTitle} />
+          </div>
+          {width < 1024 && <Navbar />}
         </div>
       </div>
-      <div className={classes.HeaderRow}>
-        <Navbar />
-      </div>
+      {width >= 1024 && (
+        <div className={classes.HeaderRow}>
+          <Navbar />
+        </div>
+      )}
     </header>
   )
 }

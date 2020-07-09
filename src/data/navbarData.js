@@ -4,6 +4,7 @@ import {
   faUserAlt,
   faShoppingCart,
 } from '@fortawesome/free-solid-svg-icons'
+import { faWeebly } from '@fortawesome/free-brands-svg-icons'
 
 export const categories = [
   { label: 'Music', short: 'Music', to: '/' },
@@ -19,6 +20,11 @@ export const misc = [
 
 export const account = [
   { icon: faUserAlt, label: 'My Juno', to: '/', status: 'online' },
-  { icon: null, label: 'Wishlist', to: '/' },
-  { icon: faShoppingCart, iconColor: '#E89108', label: 'Cart', to: '/' },
+  { icon: faWeebly, label: 'Wishlist', to: '/' },
+  {
+    icon: faShoppingCart,
+    iconColor: '#E89108',
+    label: 'Cart',
+    to: '/',
+  },
 ]

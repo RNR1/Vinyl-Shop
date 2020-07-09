@@ -9,7 +9,7 @@ export default function Navbar() {
     <div className={classes.Container}>
       <NavGroup items={categories} chevron className={classes.Categories} />
       <NavGroup items={misc} className={classes.Misc} />
-      <NavGroup items={account} className={classes.Account} />
+      <NavGroup items={account} className={classes.Account} responsiveItems />
     </div>
   )
 }

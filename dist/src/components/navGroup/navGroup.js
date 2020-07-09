@@ -30,6 +30,7 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
  * @param {[]} items
  * @param {ReactElement} Item
  * @param {string} direction
+ * @param {bool} responsiveItems
  * @example
  *  <NavGroup items={[{ label: "Music", short: "Music", to: "/" }]} chevron className={classes.Categories} />
  */
@@ -40,7 +41,8 @@ function NavGroup(_ref) {
       Item = _ref$Item === void 0 ? _navItem["default"] : _ref$Item,
       _ref$direction = _ref.direction,
       direction = _ref$direction === void 0 ? 'row' : _ref$direction,
-      props = _objectWithoutProperties(_ref, ["title", "items", "Item", "direction"]);
+      responsiveItems = _ref.responsiveItems,
+      props = _objectWithoutProperties(_ref, ["title", "items", "Item", "direction", "responsiveItems"]);
 
   return /*#__PURE__*/_react["default"].createElement("div", {
     style: Container(direction)
@@ -54,7 +56,8 @@ function NavGroup(_ref) {
       color: i.iconColor,
       to: i.to,
       label: i.label,
-      status: i.status
+      status: i.status,
+      responsive: Item === _navItem["default"] ? responsiveItems : null
     }, props));
   }));
 }
@@ -63,7 +66,8 @@ NavGroup.propTypes = {
   title: _propTypes["default"].string,
   items: _propTypes["default"].array.isRequired,
   Item: _propTypes["default"].func,
-  direction: _propTypes["default"].oneOf(['row', 'column'])
+  direction: _propTypes["default"].oneOf(['row', 'column']),
+  responsiveItems: _propTypes["default"].bool
 };
 
 var Container = function Container(direction) {
