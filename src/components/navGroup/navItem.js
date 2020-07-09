@@ -9,30 +9,27 @@ import FlagIcon from '@bit/ronbraha.codebyron.flag-icon.flag-icon'
 import useCurrentWidth from '../../utils/useCurrentWidth'
 
 export default function NavItem({
-  icon,
-  iso,
-  color,
-  label,
   chevron,
-  status,
+  item: { icon, iconColor, iso, label, status, short },
   responsive,
   ...linkProps
 }) {
   let width = useCurrentWidth()
-  const largeScreenMode = width >= 1024 || !responsive
+  const largeScreen = width >= 1024 || !responsive
+
   return (
     <a {...linkProps}>
       {iso && <FlagIcon iso={iso} />}
       {icon && (
         <FontAwesomeIcon
           icon={icon}
-          color={color}
-          size={largeScreenMode ? 'sm' : 'lg'}
+          color={iconColor}
+          size={largeScreen ? 'sm' : 'lg'}
           style={{ marginRight: 5 }}
         />
       )}
       <span>
-        {largeScreenMode && label}{' '}
+        {largeScreen ? label : short}
         {chevron && <FontAwesomeIcon icon={faCaretDown} />}
       </span>
       {status && <StatusIndicator status={status} />}
@@ -41,11 +38,14 @@ export default function NavItem({
 }
 
 NavItem.propTypes = {
-  icon: PropTypes.object,
-  iso: PropTypes.string,
-  color: PropTypes.string,
-  label: PropTypes.string,
   chevron: PropTypes.bool,
-  status: PropTypes.string,
+  item: PropTypes.shape({
+    icon: PropTypes.object,
+    iconColor: PropTypes.string,
+    iso: PropTypes.string,
+    label: PropTypes.string,
+    status: PropTypes.string,
+    short: PropTypes.string,
+  }),
   responsive: PropTypes.bool,
 }

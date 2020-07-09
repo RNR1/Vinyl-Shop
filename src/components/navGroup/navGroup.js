@@ -28,15 +28,10 @@ export default function NavGroup({
     <div style={Container(direction)}>
       {title && <h5 className={classes.Title}>{title}</h5>}
       {items &&
-        items.map(i => (
+        items.map(item => (
           <Item
-            key={i.label}
-            icon={i.icon}
-            iso={i.iso}
-            color={i.iconColor}
-            to={i.to}
-            label={i.label}
-            status={i.status}
+            key={item.label}
+            item={item}
             responsive={Item === NavItem ? responsiveItems : null}
             {...props}
           />
