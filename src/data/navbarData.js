@@ -3,6 +3,7 @@ import {
   faQuestionCircle,
   faUserAlt,
   faShoppingCart,
+  faSearch,
 } from '@fortawesome/free-solid-svg-icons'
 import { faWeebly } from '@fortawesome/free-brands-svg-icons'
 
@@ -17,6 +18,8 @@ export const misc = [
   { icon: faGift, label: 'Gift Vouchers', to: '/' },
   { icon: faQuestionCircle, label: 'Help', to: '/' },
 ]
+
+export const search = { icon: faSearch, label: 'Search' }
 
 export const account = [
   { icon: faUserAlt, label: 'My Juno', to: '/', status: 'online' },

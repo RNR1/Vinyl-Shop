@@ -36,7 +36,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "ronbraha.codebyron/nav-group@1.0.25": {
+    "ronbraha.codebyron/nav-group@1.0.26": {
         "files": [
             {
                 "name": "navGroup.js",
@@ -77,7 +77,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "ronbraha.codebyron/social-bar@1.0.28": {
+    "ronbraha.codebyron/social-bar@1.0.30": {
         "files": [
             {
                 "name": "icon.js",

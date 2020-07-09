@@ -11,6 +11,8 @@ import useCurrentWidth from '../../utils/useCurrentWidth'
 
 export default function Header({ siteTitle, banner }) {
   const width = useCurrentWidth()
+  const midScreen = width >= 768
+  const largeScreen = width >= 1024
   return (
     <header className={classes.Header}>
       <div className={classes.HeaderRow}>
@@ -18,14 +20,16 @@ export default function Header({ siteTitle, banner }) {
           <Logo />
         </div>
         <div className={classes.SearchStack}>
-          <SearchBar siteTitle={siteTitle} searchFilters={searchTypes} />
+          {midScreen && (
+            <SearchBar siteTitle={siteTitle} searchFilters={searchTypes} />
+          )}
           <div className={classes.Banner}>
             <Img fixed={banner} alt={siteTitle} />
           </div>
-          {width < 1024 && <Navbar />}
+          {!largeScreen && <Navbar addSearch={!midScreen} />}
         </div>
       </div>
-      {width >= 1024 && (
+      {largeScreen && (
         <div className={classes.HeaderRow}>
           <Navbar />
         </div>

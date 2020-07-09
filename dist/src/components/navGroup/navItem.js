@@ -26,27 +26,29 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 function NavItem(_ref) {
-  var icon = _ref.icon,
-      iso = _ref.iso,
-      color = _ref.color,
-      label = _ref.label,
-      chevron = _ref.chevron,
-      status = _ref.status,
+  var chevron = _ref.chevron,
+      _ref$item = _ref.item,
+      icon = _ref$item.icon,
+      iconColor = _ref$item.iconColor,
+      iso = _ref$item.iso,
+      label = _ref$item.label,
+      status = _ref$item.status,
+      _short = _ref$item["short"],
       responsive = _ref.responsive,
-      linkProps = _objectWithoutProperties(_ref, ["icon", "iso", "color", "label", "chevron", "status", "responsive"]);
+      linkProps = _objectWithoutProperties(_ref, ["chevron", "item", "responsive"]);
 
   var width = (0, _useCurrentWidth["default"])();
-  var largeScreenMode = width >= 1024 || !responsive;
+  var largeScreen = width >= 1024 || !responsive;
   return /*#__PURE__*/_react["default"].createElement("a", linkProps, iso && /*#__PURE__*/_react["default"].createElement(_ronbrahaCodebyronFlagIcon["default"], {
     iso: iso
   }), icon && /*#__PURE__*/_react["default"].createElement(_reactFontawesome.FontAwesomeIcon, {
     icon: icon,
-    color: color,
-    size: largeScreenMode ? 'sm' : 'lg',
+    color: iconColor,
+    size: largeScreen ? 'sm' : 'lg',
     style: {
       marginRight: 5
     }
-  }), /*#__PURE__*/_react["default"].createElement("span", null, largeScreenMode && label, ' ', chevron && /*#__PURE__*/_react["default"].createElement(_reactFontawesome.FontAwesomeIcon, {
+  }), /*#__PURE__*/_react["default"].createElement("span", null, largeScreen ? label : _short, chevron && /*#__PURE__*/_react["default"].createElement(_reactFontawesome.FontAwesomeIcon, {
     icon: _freeSolidSvgIcons.faCaretDown
   })), status && /*#__PURE__*/_react["default"].createElement(_statusIndicator["default"], {
     status: status
@@ -54,12 +56,15 @@ function NavItem(_ref) {
 }
 
 NavItem.propTypes = {
-  icon: _propTypes["default"].object,
-  iso: _propTypes["default"].string,
-  color: _propTypes["default"].string,
-  label: _propTypes["default"].string,
   chevron: _propTypes["default"].bool,
-  status: _propTypes["default"].string,
+  item: _propTypes["default"].shape({
+    icon: _propTypes["default"].object,
+    iconColor: _propTypes["default"].string,
+    iso: _propTypes["default"].string,
+    label: _propTypes["default"].string,
+    status: _propTypes["default"].string,
+    "short": _propTypes["default"].string
+  }),
   responsive: _propTypes["default"].bool
 };
 

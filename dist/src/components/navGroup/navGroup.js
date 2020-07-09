@@ -48,15 +48,10 @@ function NavGroup(_ref) {
     style: Container(direction)
   }, title && /*#__PURE__*/_react["default"].createElement("h5", {
     className: _navGroupModule["default"].Title
-  }, title), items && items.map(function (i) {
+  }, title), items && items.map(function (item) {
     return /*#__PURE__*/_react["default"].createElement(Item, _extends({
-      key: i.label,
-      icon: i.icon,
-      iso: i.iso,
-      color: i.iconColor,
-      to: i.to,
-      label: i.label,
-      status: i.status,
+      key: item.label,
+      item: item,
       responsive: Item === _navItem["default"] ? responsiveItems : null
     }, props));
   }));

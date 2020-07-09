@@ -20,28 +20,32 @@ function _objectWithoutProperties(source, excluded) { if (source == null) return
 function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
 
 function Icon(_ref) {
-  var icon = _ref.icon,
-      to = _ref.to,
+  var _ref$item = _ref.item,
+      icon = _ref$item.icon,
+      iconColor = _ref$item.iconColor,
+      to = _ref$item.to,
       _ref$color = _ref.color,
       color = _ref$color === void 0 ? '#fff' : _ref$color,
       className = _ref.className,
-      props = _objectWithoutProperties(_ref, ["icon", "to", "color", "className"]);
+      props = _objectWithoutProperties(_ref, ["item", "color", "className"]);
 
   return /*#__PURE__*/_react["default"].createElement("a", {
     href: to,
     className: className
   }, /*#__PURE__*/_react["default"].createElement(_reactFontawesome.FontAwesomeIcon, _extends({
     icon: icon,
-    color: props.iconColor || color
+    color: iconColor || color
   }, props)));
 }
 
 Icon.propTypes = {
-  icon: _propTypes["default"].object,
-  to: _propTypes["default"].string,
   color: _propTypes["default"].string,
-  className: _propTypes["default"].string,
-  iconColor: _propTypes["default"].string
+  item: _propTypes["default"].shape({
+    icon: _propTypes["default"].object,
+    iconColor: _propTypes["default"].string,
+    to: _propTypes["default"].string
+  }),
+  className: _propTypes["default"].string
 };
 var _default = Icon;
 exports["default"] = _default;
