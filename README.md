@@ -19,6 +19,10 @@ I decided to challenge myself to reverse engineer their website with gatsby(reac
 
 <img src="assets/header.png" alt="Header">
 
+#### Responsive View
+
+<img src="assets/responsive-header.gif" alt="Responsive Header">
+
 ### Search + Dropdown
 
 <img src="assets/dropdown.gif" alt="Dropdown menu">
@@ -26,3 +30,7 @@ I decided to challenge myself to reverse engineer their website with gatsby(reac
 ### Footer
 
 <img src="assets/footer.png" alt="Footer">
+
+#### Responsive View
+
+<img src="assets/responsive-footer.gif" alt="Responsive Footer">
