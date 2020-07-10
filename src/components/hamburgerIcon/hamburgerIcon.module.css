@@ -1,0 +1,14 @@
+.HamburgerIcon {
+  color: white;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 12px;
+}
+
+.HamburgerIcon:hover {
+  color: #16252e;
+  z-index: 0;
+  transition: color 0.3s ease-in-out;
+}

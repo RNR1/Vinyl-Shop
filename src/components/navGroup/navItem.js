@@ -30,7 +30,9 @@ export default function NavItem({
       )}
       <span>
         {largeScreen ? label : short}
-        {chevron && <FontAwesomeIcon icon={faCaretDown} />}
+        {chevron && (
+          <FontAwesomeIcon icon={faCaretDown} style={{ marginLeft: 5 }} />
+        )}
       </span>
       {status && <StatusIndicator status={status} />}
     </a>

@@ -25,6 +25,7 @@
   .Input {
     flex-grow: 1;
   }
+
   .Input {
     max-width: 150px;
     width: auto;

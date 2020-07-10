@@ -49,7 +49,10 @@ function NavItem(_ref) {
       marginRight: 5
     }
   }), /*#__PURE__*/_react["default"].createElement("span", null, largeScreen ? label : _short, chevron && /*#__PURE__*/_react["default"].createElement(_reactFontawesome.FontAwesomeIcon, {
-    icon: _freeSolidSvgIcons.faCaretDown
+    icon: _freeSolidSvgIcons.faCaretDown,
+    style: {
+      marginLeft: 5
+    }
   })), status && /*#__PURE__*/_react["default"].createElement(_statusIndicator["default"], {
     status: status
   }));

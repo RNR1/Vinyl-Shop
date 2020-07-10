@@ -22,6 +22,9 @@ export default function logo() {
 const styles = {
   Logo: {
     userSelect: 'none',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 }
 
@@ -34,7 +37,7 @@ const query = graphql`
     }
     logo: file(relativePath: { eq: "logo.png" }) {
       childImageSharp {
-        fixed(height: 40) {
+        fixed(height: 30) {
           ...GatsbyImageSharpFixed
         }
       }

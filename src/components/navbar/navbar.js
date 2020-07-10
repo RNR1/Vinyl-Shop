@@ -5,8 +5,14 @@ import NavGroup from '../navGroup/navGroup'
 import { categories, misc, search, account } from '../../data/navbarData'
 import classes from './navbar.module.css'
 
-export default function Navbar({ addSearch = false }) {
-  const accountGroup = addSearch ? [{ ...search }, ...account] : account
+export default function Navbar({ addSearch = false, removeWishlist = false }) {
+  let accountGroup = [...account]
+  if (addSearch) accountGroup = [{ ...search }, ...account]
+  if (removeWishlist)
+    accountGroup = [
+      { ...search },
+      ...account.filter(i => i.label !== 'Wishlist'),
+    ]
   return (
     <div className={classes.Container}>
       <NavGroup items={categories} chevron className={classes.Categories} />
@@ -22,4 +28,5 @@ export default function Navbar({ addSearch = false }) {
 
 Navbar.propTypes = {
   addSearch: PropTypes.bool,
+  removeWishlist: PropTypes.bool,
 }

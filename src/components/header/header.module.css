@@ -1,41 +1,82 @@
 .Header {
-  position: fixed;
-  display: flex;
-  justify-content: space-evenly;
-  width: 100%;
   background-color: #2c495b;
+  height: 50px;
+  position: fixed;
+  width: 100%;
+  z-index: 0;
 }
 
-.Logo {
-  display: flex;
-  align-self: center;
-  justify-self: flex-start;
+.Container {
+  margin: 0 auto;
+  max-width: 1320px;
+  height: 100%;
+  padding-top: 12px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .HeaderRow {
   display: flex;
+}
+
+.HeaderRow:first-child {
   flex: 2;
-  width: 100%;
-  justify-content: space-around;
+}
+
+.HeaderRow:last-child {
+  flex: 3;
+}
+
+.LogoStack,
+.SearchStack {
+  display: flex;
+}
+.LogoStack {
+  flex: 0.9;
+  justify-content: center;
 }
 
 .SearchStack {
-  display: flex;
+  flex: 1.1;
   align-content: center;
-  justify-self: flex-end;
+  justify-content: flex-end;
 }
 
 .Banner {
   display: none;
 }
 
+@media (min-width: 768px) {
+  .Container {
+    padding-left: 25px;
+    padding-right: 25px;
+  }
+
+  .LogoStack {
+    justify-content: flex-start;
+  }
+}
+
 @media (min-width: 1024px) {
   .Header {
-    display: flex;
-    flex-direction: column;
+    height: 90px;
   }
+
+  .Container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .LogoStack {
+    justify-content: flex-start;
+  }
+
+  .SearchStack {
+    justify-content: flex-end;
+  }
+
   .HeaderRow {
-    justify-content: space-around;
+    justify-content: center;
   }
 
   .Banner {
