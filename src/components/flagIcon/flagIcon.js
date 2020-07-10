@@ -15,7 +15,7 @@ export default function FlagIcon({ iso }) {
   return (
     <span
       className={`flag-icon flag-icon-${iso}`}
-      style={{ marginRight: 5, zIndex: 0 }}
+      style={{ marginRight: 5, zIndex: -1 }}
     ></span>
   )
 }

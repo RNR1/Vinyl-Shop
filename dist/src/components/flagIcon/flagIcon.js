@@ -29,7 +29,7 @@ function FlagIcon(_ref) {
     className: "flag-icon flag-icon-".concat(iso),
     style: {
       marginRight: 5,
-      zIndex: 0
+      zIndex: -1
     }
   });
 }
