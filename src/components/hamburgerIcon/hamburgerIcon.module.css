@@ -4,7 +4,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 12px;
+  margin: 0 8px 0 8px;
+}
+
+@media (max-width: 374px) {
+  .HamburgerIcon {
+    margin: 0 6px 0 12px;
+  }
 }
 
 .HamburgerIcon:hover {
