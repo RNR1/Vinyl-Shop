@@ -1,12 +1,13 @@
 import React from 'react'
-import NavGroup from '../navGroup/navGroup'
-
-import SecureIcon from '../secureIcon/secureIcon'
-import classes from './footer.module.css'
 import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import PaymentMethods from '../paymentMethods/paymentMethods'
+
+import IconsContainer from '../IconsContainer/IconsContainer'
 import SocialBar from '../socialBar/socialBar'
+import SecureIcon from '../secureIcon/secureIcon'
+import paymentIcons from '../paymentIcons'
+import NavGroup from '../navGroup/navGroup'
+import classes from './footer.module.css'
 
 export default function Footer() {
   const {
@@ -44,7 +45,7 @@ export default function Footer() {
           <h5 className={(classes.SecureStatement, classes.FooterStatement)}>
             <SecureIcon /> 100% Secure Shopping
           </h5>
-          <PaymentMethods />
+          <IconsContainer icons={paymentIcons} />
           <h5 className={classes.FooterStatement}>DJ Mag Best Of British</h5>
           <p className={classes.SmallStatement}>
             Best Music Store: 5 time winners
