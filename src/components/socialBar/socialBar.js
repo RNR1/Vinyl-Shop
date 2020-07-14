@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import classes from './socialBar.module.css'
 import NavGroup from '@bit/ronbraha.codebyron.nav-group'
 import Icon from './icon'
-import { socialLinks } from './socialLinks'
 
 /** @flow */
 /**
@@ -20,7 +19,7 @@ import { socialLinks } from './socialLinks'
  */
 export default function SocialBar({
   siteTitle,
-  socialItems = socialLinks,
+  socialItems = [],
   feedbackUrl = '/',
 }) {
   return (

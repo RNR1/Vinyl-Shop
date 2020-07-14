@@ -19,8 +19,6 @@ var _ronbrahaCodebyron = _interopRequireDefault(require("@bit/ronbraha.codebyron
 
 var _icon = _interopRequireDefault(require("./icon"));
 
-var _socialLinks = require("./socialLinks");
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 /** @flow */
@@ -37,7 +35,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 function SocialBar(_ref) {
   var siteTitle = _ref.siteTitle,
       _ref$socialItems = _ref.socialItems,
-      socialItems = _ref$socialItems === void 0 ? _socialLinks.socialLinks : _ref$socialItems,
+      socialItems = _ref$socialItems === void 0 ? [] : _ref$socialItems,
       _ref$feedbackUrl = _ref.feedbackUrl,
       feedbackUrl = _ref$feedbackUrl === void 0 ? '/' : _ref$feedbackUrl;
   return /*#__PURE__*/_react["default"].createElement("div", {

@@ -42,7 +42,7 @@ export default function NavItem({
 NavItem.propTypes = {
   chevron: PropTypes.bool,
   item: PropTypes.shape({
-    icon: PropTypes.object,
+    icon: PropTypes.any,
     iconColor: PropTypes.string,
     iso: PropTypes.string,
     label: PropTypes.string,

@@ -18,7 +18,7 @@ function Icon({
 Icon.propTypes = {
   color: PropTypes.string,
   item: PropTypes.shape({
-    icon: PropTypes.object,
+    icon: PropTypes.any,
     iconColor: PropTypes.string,
     to: PropTypes.string,
   }),

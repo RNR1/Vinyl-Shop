@@ -18,7 +18,7 @@ import classes from './navGroup.module.css'
  */
 export default function NavGroup({
   title,
-  items,
+  items = [],
   Item = NavItem,
   direction = 'row',
   responsiveItems,

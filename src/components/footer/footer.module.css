@@ -25,6 +25,10 @@
   text-decoration: underline;
 }
 
+.ItemGroup:last-child:hover {
+  text-decoration: none;
+}
+
 .FooterStatement {
   color: #fff;
   font-size: 18px;

@@ -61,7 +61,7 @@ function NavItem(_ref) {
 NavItem.propTypes = {
   chevron: _propTypes["default"].bool,
   item: _propTypes["default"].shape({
-    icon: _propTypes["default"].object,
+    icon: _propTypes["default"].any,
     iconColor: _propTypes["default"].string,
     iso: _propTypes["default"].string,
     label: _propTypes["default"].string,

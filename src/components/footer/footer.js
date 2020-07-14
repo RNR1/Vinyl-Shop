@@ -1,16 +1,24 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import NavGroup from '../navGroup/navGroup'
 
 import SecureIcon from '../secureIcon/secureIcon'
-import { info, departments, myJuno } from '../../data/footerData'
 import classes from './footer.module.css'
-import { StaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import PaymentMethods from '../paymentMethods/paymentMethods'
 import SocialBar from '../socialBar/socialBar'
 
-export default function Footer({ siteTitle }) {
+export default function Footer() {
+  const {
+    site: {
+      siteMetadata: {
+        title,
+        footerData: { info, departments, myJuno, socialLinks },
+      },
+    },
+    afem,
+  } = useStaticQuery(query)
+
   return (
     <footer className={classes.Footer}>
       <div className={classes.ItemGroups}>
@@ -41,14 +49,9 @@ export default function Footer({ siteTitle }) {
           <p className={classes.SmallStatement}>
             Best Music Store: 5 time winners
           </p>
-          <StaticQuery
-            query={query}
-            render={data => (
-              <Img
-                fixed={data.afem.childImageSharp.fixed}
-                alt="Association for Electronic Music"
-              />
-            )}
+          <Img
+            fixed={afem.childImageSharp.fixed}
+            alt="Association for Electronic Music"
           />
           <p className={classes.SmallStatement}>© 1996 - 2020 Juno Records</p>
           <p className={classes.License}>
@@ -60,20 +63,35 @@ export default function Footer({ siteTitle }) {
           </p>
         </div>
       </div>
-      <SocialBar siteTitle={siteTitle} />
+      <SocialBar siteTitle={title} socialItems={socialLinks} />
     </footer>
   )
 }
 
-Footer.propTypes = {
-  siteTitle: PropTypes.string.isRequired,
-}
-
 const query = graphql`
-  query afemLogo {
+  {
     site {
       siteMetadata {
         title
+        footerData {
+          departments {
+            label
+            to
+          }
+          info {
+            label
+            to
+          }
+          myJuno {
+            label
+            to
+          }
+          socialLinks {
+            icon
+            label
+            to
+          }
+        }
       }
     }
     afem: file(relativePath: { eq: "afem.png" }) {

@@ -1,0 +1,16 @@
+.VerticalTab {
+  display: flex;
+  box-shadow: 0 0 11px -4px #000;
+  padding: 2px 10px;
+  margin-right: 10px;
+}
+
+.Label {
+  font-size: 0.9rem;
+  color: white;
+}
+
+.Caret {
+  cursor: e-resize;
+  margin: 0 0 0 10px;
+}

@@ -36,7 +36,8 @@ function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) r
  */
 function NavGroup(_ref) {
   var title = _ref.title,
-      items = _ref.items,
+      _ref$items = _ref.items,
+      items = _ref$items === void 0 ? [] : _ref$items,
       _ref$Item = _ref.Item,
       Item = _ref$Item === void 0 ? _navItem["default"] : _ref$Item,
       _ref$direction = _ref.direction,

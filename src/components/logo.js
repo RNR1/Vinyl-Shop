@@ -1,20 +1,18 @@
-import { Link, graphql, StaticQuery } from 'gatsby'
+import React from 'react'
+import { Link, graphql, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 
-import React from 'react'
+export default function Logo() {
+  const {
+    logo,
+    site: {
+      siteMetadata: { title: alt },
+    },
+  } = useStaticQuery(query)
 
-export default function logo() {
   return (
     <Link to="/" style={styles.Logo}>
-      <StaticQuery
-        query={query}
-        render={data => (
-          <Img
-            fixed={data.logo.childImageSharp.fixed}
-            alt={data.site.siteMetadata.title}
-          />
-        )}
-      />
+      <Img fixed={logo.childImageSharp.fixed} alt={alt} />
     </Link>
   )
 }

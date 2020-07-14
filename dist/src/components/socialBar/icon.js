@@ -41,7 +41,7 @@ function Icon(_ref) {
 Icon.propTypes = {
   color: _propTypes["default"].string,
   item: _propTypes["default"].shape({
-    icon: _propTypes["default"].object,
+    icon: _propTypes["default"].any,
     iconColor: _propTypes["default"].string,
     to: _propTypes["default"].string
   }),
