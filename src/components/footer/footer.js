@@ -4,10 +4,10 @@ import Img from 'gatsby-image'
 
 import IconsContainer from '../IconsContainer/IconsContainer'
 import SocialBar from '../socialBar/socialBar'
-import SecureIcon from '../secureIcon/secureIcon'
 import paymentIcons from '../paymentIcons'
 import NavGroup from '../navGroup/navGroup'
 import classes from './footer.module.css'
+import SecureStatement from '../secureStatement/secureStatement'
 
 export default function Footer() {
   const {
@@ -42,9 +42,7 @@ export default function Footer() {
           className={classes.ItemGroup}
         />
         <div className={classes.ItemGroup}>
-          <h5 className={(classes.SecureStatement, classes.FooterStatement)}>
-            <SecureIcon /> 100% Secure Shopping
-          </h5>
+          <SecureStatement />
           <IconsContainer icons={paymentIcons} />
           <h5 className={classes.FooterStatement}>DJ Mag Best Of British</h5>
           <p className={classes.SmallStatement}>
